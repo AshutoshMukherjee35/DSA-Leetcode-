@@ -1,0 +1,20 @@
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+  let xcopy = x;
+  if(xcopy<0) return false;
+  let rev = 0;
+  console.log('xcopy', xcopy)
+  while(xcopy > 0) {
+    let rem = Math.abs(xcopy % 10);
+    rev = (10*rev) + rem;
+    xcopy = Math.floor(xcopy/10);
+  }  
+  let limit = Math.pow(2,31) 
+  if(rev >= -limit && rev<=limit) {
+    return rev === x ? true : false;
+  }
+  return false;
+};
