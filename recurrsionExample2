@@ -1,0 +1,9 @@
+let n = 15;
+
+function print(x) {
+    // if (n < 1) return;
+    if (x > n) return;
+    console.log(x);
+    print(++x);
+}
+print(1)
